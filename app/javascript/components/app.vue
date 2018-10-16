@@ -14,7 +14,6 @@
       <el-button type="warning" plain>Warning</el-button>
       <el-button type="danger" plain>Danger</el-button>
     </el-row>
-      
 
   </div>
 
