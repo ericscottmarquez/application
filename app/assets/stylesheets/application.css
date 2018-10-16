@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+//variables
+$yellow: #FFF168;
+$blue: #2284C0;
+$orange: #FF6531;
+$green: #00BB58;
+$gold: #F8B240;
+$red: #EB2526;
+$lightBlue: #AEEAF4;
+//list of albumColors
+$albumColors: ($yellow, $blue, $orange, $green, $gold, $red, $lightBlue);
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600');
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  background-color: #111;
+  //background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1362379/inRainbowsBackground.jpg');
+}
+
+//layout
+.container {
+  width: 350px;
+  margin: 50px auto;
+  @media screen and (min-width: 768px) {
+    width: 615px;
+  }
+}
+
+//text styles
+
+ul {
+  padding: 0 0 0 10px;
+}
+
+ul, li, .rainbow {
+  list-style: none;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-size: 28px;
+  @media screen and (min-width: 768px) {
+    font-size: 54px;
+  }
+}
+//Add corresponding text color to each li:nth-child
+
+@for $i from 1 through length($albumColors) {
+  li:nth-child(#{length($albumColors)}n + #{$i}) {
+    color: nth($albumColors, $i);
+  }
+}
+
+//input styles
+input[type="text"] {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 10px;
+  padding: 15px;
+  background: transparent;
+  border: 1px solid white;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  &::placeholder {
+    color: #ECECEC;
+    opacity: .8;
+  }
+  @media screen and (min-width: 768px) {
+    width: 250px;
+    height: 20px;
+  }
+}
