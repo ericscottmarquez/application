@@ -133,7 +133,7 @@ confirmEdditing(callback, index, clearData){
       <h1 style={{
           fontSize: "80px",
           padding: "40px 0 40px 0"
-        }}>Time Sheet</h1>
+        }}>ReactJS [c][r][u][d] </h1>
       <p>Test out by entering data.  You can after delete or edit.</p>
  
       <br/>

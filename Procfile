@@ -1,3 +1,3 @@
 # Procfile
-backend: bin/rails s -p 3000
-frontend: bin/webpack-dev-server
+web: bundle exec puma -p $PORT
+webpack: bin/webpack-dev-server
